@@ -1,5 +1,9 @@
 =pod
 
+=head1 NAME
+
+StatGalGen - A static gallery generator, written in Perl. 
+
 =head1 DEPENDENCIES
 
 =head2 Non-Perl
@@ -9,5 +13,12 @@
 =item * rsync
 
 =back
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright 2014 Magnus Enger
+
+This software is free software; you may redistribute it and/or modify
+it under the same terms as Perl itself.
 
 =cut
