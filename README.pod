@@ -1,0 +1,13 @@
+=pod
+
+=head1 DEPENDENCIES
+
+=head2 Non-Perl
+
+=over 4
+
+=item * rsync
+
+=back
+
+=cut

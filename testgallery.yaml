@@ -1,0 +1,13 @@
+---
+
+# Config file for perlgallerygenerator
+
+# Absolute path to where the source images are stored
+# Don't include trailing slash! 
+in_path: "/home/magnus/Nedlastinger/galleri/in"
+
+# Absolute path to where the generated image gallery should be stored
+# Don't include trailing slash! 
+out_path: "/var/www/galleri"
+
+

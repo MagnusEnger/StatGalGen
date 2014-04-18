@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[% pagetitle %]</title>
+<!-- Bootstrap -->
+<link href="/.static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<style>
+html {
+    padding-top: 2em;
+}
+</style>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="container">
+  
+<ol class="breadcrumb">
+    [% SET path = '' %]
+    <li><a href="/">Home</a></li>
+    [% FOREACH dir IN reldir.split('/') %]
+        [% NEXT IF dir == '' %]
+        [% IF loop.last() && !img %]
+            <li class="active">[% dir %]</li>
+        [% ELSE %]
+            [% path = path _ '/' _ dir %]
+            <li><a href="[% path %]">[% dir %]</a></li>
+            [% IF loop.last() && img %]
+                <li class="active">[% img %]</li>
+            [% END %]
+        [% END %]
+    [% END %]
+</ol>
+
+[% IF ( img ) %]
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <a href="index.html"><img src="[% img %]" class="img-responsive"></a>
+        </div>
+    </div>
+
+[% ELSE %]
+
+    <ul class="list-group">
+        [% FOREACH dir IN dirs.sort %]
+        <li class="list-group-item"><a href="[% dir %]/index.html">[% dir %]</a></li>
+        [% END %]
+    </ul>
+
+    [% FOREACH file IN files.sort %]
+    <div class="col-xs-6 col-md-3">
+        <a href="[% file %].html" class="thumbnail"><img src=".thumb/[% file %]"></a>
+    </div>
+    [% END %]
+
+[% END %]
+
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/.static/jquery/jquery-2.1.0.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/.static/js-load-image/js/load-image.min.js"></script>
+<script src="/.static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
+
